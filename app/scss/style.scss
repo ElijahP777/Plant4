@@ -384,6 +384,7 @@ margin-right: 38px;
 }
 .arrow-link {
     padding-left: 20px;
+    object-fit: contain;
 }
 .cards {
     width: 987px;
@@ -602,7 +603,18 @@ opacity: 1;
     }
     .interior-collection img {
         border-radius: 25px;
-    }    
+    } 
+    .interior__info {
+        border-radius: 25px;
+        h3 {
+            font-size: 40px;
+        }
+    }   
+}
+@media (max-width: 425px) {
+    .interior__info h3 {
+        font-size: 26px;
+    }
 }
 // CARE
 .care {
@@ -651,6 +663,7 @@ opacity: 1;
     width: 60px;
     height: 60px;
     flex-shrink: 0;
+    object-fit: contain;
   }
   .info-care h4 {
     margin-bottom: 8px;
