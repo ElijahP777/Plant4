@@ -28,16 +28,49 @@ $(function () {
                 $('.slick-prev').hide();
                 $('.cards').find('.slick-prev').css('display', 'none');
 })
-document.addEventListener('click', documentClick);
+// document.addEventListener('click', documentClick);
 
-function documentClick(e) {
-    const targetItem = e.target;
+// function documentClick(e) {
+//     const targetItem = e.target;
 
-    if (targetItem.closest('.icon-menu')){
+//     if (targetItem.closest('.icon-menu')){
+//         document.documentElement.classList.toggle('menu-open');
+//     }
+// }
+document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('click', documentClick);
+  
+    function documentClick(e) {
+      const targetItem = e.target;
+  
+      if (targetItem.closest('.icon-menu')) {
         document.documentElement.classList.toggle('menu-open');
+      }
+  
+      if (window.innerWidth <= 768) {
+        const menuLink = targetItem.closest('.menu__list-link');
+        if (menuLink) {
+          e.preventDefault();
+          const sectionId = menuLink.getAttribute('href');
+          document.documentElement.classList.remove('menu-open');
+          setTimeout(function() {
+            scrollToSection(sectionId);
+          }, 300); // Задержка 300 миллисекунд (0.3 секунды)  
+        }
+      }
     }
-}
-
+  
+    function scrollToSection(sectionId) {
+      const section = document.querySelector(sectionId);
+      if (section) {
+        section.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  });
+  
 
 
 

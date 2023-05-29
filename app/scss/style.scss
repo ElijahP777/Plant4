@@ -288,7 +288,16 @@
     .card-items {
         width: 250px;   
     }
-} 
+    .background-image {
+        background-image: none;
+        height: auto;
+    } 
+    .top .container {
+        background-color: #283444;
+        height: auto;
+        padding-bottom: 150px;
+    }
+}
 ----ROW-Card
 .seller {
 }
@@ -677,6 +686,70 @@ opacity: 1;
     line-height: 115%;
     color: #4F4F4F;
   }
+  .sun:hover img {
+    animation: animation1 2s ease-in-out 0s infinite alternate-reverse none;  
+    }
+  @keyframes animation1 {
+    0% {
+      transform: rotate(0) scale(1);
+    }
+    60% {
+      transform: rotate(180deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  .water:hover img {
+    animation: jump 1s infinite alternate;
+  }
+  @keyframes jump {
+    0%, 50%, 100% {
+      transform: translateY(0);
+    }
+    25%, 75% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .herb img {
+    transition: transform 1s ease-in-out;
+  }
+  
+  .herb:hover img {
+    transform: rotateY(360deg);
+  }
+  
+  .herb img:hover {
+    transform: rotateY(0);
+    transition: transform 1s ease-in-out;
+  }
+  
+  .temperature:hover img {
+    animation: temperature 2s ease-out 0s infinite alternate backwards;
+  }
+  @keyframes temperature {
+    0%,100% {
+      transform: rotate(0deg);transform-origin: 50% 100%;
+    }
+    10% {
+      transform: rotate(2deg) scale(1);
+    }
+    20%,40%,60% {
+      transform: rotate(-4deg);
+    }
+    30%,50%,70% {
+      transform: rotate(4deg) scale(1.2);
+    }
+    80% {
+      transform: rotate(-2deg);
+    }
+    90% {
+      transform: rotate(2deg)scale(1);
+    }
+  }
+  
   .image-care {
         align-items: center;
         display: flex;
